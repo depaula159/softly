@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#7874f2" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#7874f2" />
+    <meta name="msapplication-navbutton-color" content="#7874f2" />
+    <title>
+      Softly | Biblioteca CSS oficial do aplicativo mobile Equilibre
+    </title>
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <!-- Sass pré-processador  -->
+    <link rel="stylesheet" href="css/softly.model.css" />
+    <!-- Font awasome  -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Aplicação Vuejs  -->
+    <div id="app">
+      <!-- Menu nav  -->
+      <nav class="nav">
+        <img class="logo" src="img/h-logo.png" alt="logo Softly" />
+        <i
+          class="fa fa-bars icone-menu"
+          @click="abrirMenu"
+          aria-hidden="true"
+        ></i>
+      </nav>
+      <nav class="nav-lateral" id="bg-menu">
+        <div id="menu" id class="lista">
+          <div class="item-titulo">
+            <p>Documentação</p>
+            <hr />
+          </div>
+          <div class="item">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <p>Home</p>
+          </div>
+          <div @click="openLayout" class="item">
+            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+            <p>Layout</p>
+          </div>
+          <div @click="openForms" class="item">
+            <i class="fa fa-list" aria-hidden="true"></i>
+            <p>Forms</p>
+          </div>
+          <div @click="openButtons" class="item">
+            <i class="fa fa-square" aria-hidden="true"></i>
+            <p>Botões</p>
+          </div>
+          <div @click="openAnim" class="item">
+            <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+            <p>Animações</p>
+          </div>
+          <div @click="openNotifications" class="item">
+            <i class="fa fa-bell" aria-hidden="true"></i>
+            <p>Notificações</p>
+          </div>
+          <div @click="openTexts" class="item">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <p>Textos</p>
+          </div>
+          <div @click="openAlerts" class="item">
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            <p>Alertas</p>
+          </div>
+        </div>
+      </nav>
+      <!-- Estrutura  -->
+      <main>
+        <!-- Conteúdo  -->
+        <article id="home">
+          <home></home>
+        </article>
+        <article id="layout">
+          <layout></layout>
+        </article>
+        <article id="forms">
+          <forms></forms>
+        </article>
+        <article id="notifications">
+          <notifications></notifications>
+        </article>
+        <article id="texts">
+          <texts></texts>
+        </article>
+        <article id="alerts">
+          <alerts></alerts>
+        </article>
+        <article id="buttons">
+          <buttons></buttons>
+        </article>
+        <article id="anim-componentes">
+          <anim-componentes></anim-componentes>
+        </article>
+      </main>
+      <footer><p>Biblioteca CSS Softly &copy; Equilibre 2020</p></footer>
+    </div>
+    <!-- Vuejs -->
+    <script src="js/vue.js"></script>
+    <script>
+      // Componentes Vuejs
+      Vue.component("home", {
+        template: `<section>
+            <div class='info'>
+              <h2>Home</h2>
+            </div>
+            <hr/>
+            <h3>Sobre a biblioteca</h3>
+            <p>Biblioteca CSS Softly criado pela empresa Equilibre. 
+            Softly tem como objetivo facilitar a vida dos desenvolvedores 
+            front-end com classes simplificadas e de fácil entendimento. Após 
+            realizar o download, coloque o arquivo na pasta CSS em seu projeto e 
+            vincule utilizando: <br><br> 
+            <code>&lt;link type="text/stylesheet" src="css/softly.css"/&gt;</code><br><br> 
+            Baixe o arquivo CSS da versão mais atualizada clicando no botão abaixo:</p>
+            <div class='download-biblioteca'>
+              <a href="css/softly.css" download>Baixar <code>1.1.2</code></a>
+              <a href="css/softly.scss" download>Baixar <code>SCSS</code></a>
+              <p>softly.css e softly.scss</p>
+            </div>
+          </section>`,
+        methods: {
+          close: function () {
+            var bloco = document.getElementById("home");
+            bloco.style.display = "none";
+          },
+        },
+      });
+      // Layout
+      Vue.component("layout", {
+        template: `<section>
+            <div class='info'>
+              <h2>Layout</h2>
+              <p @click='close'>&times;</p>
+            </div>
+            <hr/>
+            <h3>Construção do layout mobile:</h3>
+            <p>Estruturação de aplicações responsivas com <b>Flexbox.</b></p> 
+            <h3>Exemplo de aplicação:</h3>
+            <code>&lt;div class='bloco-flex-centralizado'&gt;Conteúdo&lt;/div&gt;</code>
+            <div class='flex-centralizado'>flex-centralizado</div> 
+            <div class='flex-inicio'>flex-inicio</div>
+            <div class='flex-final'>flex-final</div>
+            <div class='flex-dist-h'>
+              flex-dist-h
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+            </div>
+            <div class='flex-dist-v'>
+              flex-dist-v
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+            </div>
+            <div class='flex-galeria'>
+              <div class='box-exemplo'>flex-galeria</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+              <div class='box-exemplo'>exemplo</div>
+            </div>
+         </section>`,
+        methods: {
+          close: function () {
+            var bloco = document.getElementById("layout");
+            bloco.style.display = "none";
+          },
+        },
+      });
+      // Forms
+      Vue.component("forms", {
+        template: `<section>
+            <div class='info'>
+              <h2>Forms</h2>
+              <p @click='close'>&times;</p>
+            </div>
+            <hr/>
+            <h3>Exemplo de aplicação:</h3>
+            <code>&lt;form class='form-grupo'&gt;&lt;label&gt;Título:&lt;/label&gt;&lt;input class='form-input'type='text'placeholder='form-input'/&gt;&lt;/form&gt;</code>
+            <div class='content'>
+              <form class='form-grupo'>
+                <label>Normal:</label>
+                <input class='form-input' type='text' placeholder='form-input'/>
+                <label>Arredondado:</label>
+                <input class='form-input-arredondado' type='text' placeholder='form-input-arredondado'/>
+                <label>Linha:</label>
+                <input class='form-input-linha' type='text' placeholder='form-input-linha'/>
+              </form>
+            </div>
+         </section>`,
+        methods: {
+          close: function () {
+            var bloco = document.getElementById("forms");
+            bloco.style.display = "none";
+          },
+        },
+      });
+      // Notificações
+      Vue.component("notifications", {
+        template: `<section>
+            <div class='info'>
+              <h2>Notificações</h2>
+              <p @click='close'>&times;</p>
+            </div>
+            <hr/>
+            <h3>Exemplo de aplicação:</h3>
+            <code>&lt;div class='notif-btn'&gt;notif-btn&lt;div class='bolinha'&gt;0&lt;/div&gt;&lt;/div&gt;</code>
+            <div class='content'>
+              <div class='notif-btn-dark'>notif-btn-dark<div class='bolinha'>0</div></div>
+              <div class='notif-btn-info'>notif-btn-info<div class='bolinha'>0</div></div>
+              <div class='notif-btn-importante'>notif-btn-importante<div class='bolinha'>0</div></div>
+              <div class='notif-btn-normal'>notif-btn-normal<div class='bolinha'>0</div></div>
+            </div>
+          </section>`,
+        methods: {
+          close: function () {
+            var bloco = document.getElementById("notifications");
+            bloco.style.display = "none";
+          },
+        },
+      });
+      // Textos
+      Vue.component("texts", {
+        template: `<section>
+            <div class='info'>
+              <h2>Textos</h2>
+              <p @click='close'>&times;</p>
+            </div>
+            <hr/>
+            <div class='content-coluna'>
+              <h1 class='tipografia-h1'>tipografia-h1</h1>
+              <h2 class='tipografia-h2'>tipografia-h2</h2>
+              <h3 class='tipografia-h3'>tipografia-h3</h3>
+              <h4 class='tipografia-h4'>tipografia-h4</h4>
+              <h5 class='tipografia-h5'>tipografia-h5</h5>
+              <h6 class='tipografia-h6'>tipografia-h6</h6>
+            </div>
+         </section>`,
+        methods: {
+          close: function () {
+            var bloco = document.getElementById("texts");
+            bloco.style.display = "none";
+          },
+        },
+      });
+      // Alertas
+      Vue.component("alerts", {
+        template: `<section>
+            <div class='info'>
+              <h2>Alertas</h2>
+              <p @click='close'>&times;</p>
+            </div>
+            <hr/>
+            <h3>Exemplo de aplicação:</h3>
+            <code>&lt;div class='alerta-erro'&gt;alerta&lt;kbd&gt;&times;&lt;/kbd&gt;&lt;/div&gt;</code>
+            <div class='content'>
+              <div class='alerta'>alerta<kbd>&times;</kbd></div>
+              <div class='alerta-erro'>alerta-erro<kbd>&times;</kbd></div>
+              <div class='alerta-sucesso'>alerta-sucesso<kbd>&times;</kbd></div>
+              <div class='alerta-info'>alerta-info<kbd>&times;</kbd></div>
+              <div class='alerta-importante'>alerta-importante<kbd>&times;</kbd></div>
+              <div class='alerta-dark'>alerta-dark<kbd>&times;</kbd></div>
+            </div>
+           </section>`,
+        methods: {
+          close: function () {
+            var bloco = document.getElementById("alerts");
+            bloco.style.display = "none";
+          },
+        },
+      });
+      // Botões
+      Vue.component("buttons", {
+        template: `<section>
+            <div class='info'>
+              <h2>Botões</h2>
+              <p @click='close'>&times;</p>
+            </div>
+            <hr/>
+            <div class='content'>
+              <button class='btn-sucesso'>btn-sucesso</button>
+              <button class='btn-erro'>btn-erro</button>
+              <button class='btn-info'>btn-info</button>
+              <button class='btn-dark'>btn-dark</button>
+              <button class='btn-sucesso-contorno'>btn-sucesso-contorno</button>
+              <button class='btn-erro-contorno'>btn-erro-contorno</button>
+              <button class='btn-info-contorno'>btn-info-contorno</button>
+              <button class='btn-dark-contorno'>btn-dark-contorno</button>
+              <button class='btn-link-sucesso'>btn-link-sucesso</button>
+              <button class='btn-link-erro'>btn-link-erro</button>
+              <button class='btn-link-info'>btn-link-info</button>
+              <button class='btn-link-dark'>btn-link-dark</button>
+            </div>
+           </section>`,
+        methods: {
+          close: function () {
+            var bloco = document.getElementById("buttons");
+            bloco.style.display = "none";
+          },
+        },
+      });
+      // Animações
+      Vue.component("anim-componentes", {
+        template: `<section>
+            <div class='info'>
+              <h2>Animações</h2>
+              <p @click='close'>&times;</p>
+            </div>
+            <hr/>
+            <div class='content-coluna'>
+              <div class='slide-direita'>
+                <div class='exemplo'>slide-direita</div>
+              </div>
+              <div class='slide-esquerda'>
+                <div class='exemplo'>slide-esquerda</div>
+              </div>
+              <div class='slide-cima'>
+                <div class='exemplo'>slide-cima</div>
+              </div>
+              <div class='slide-baixo'>
+                <div class='exemplo'>slide-baixo</div>
+              </div>
+              <div class='fadeIn'>
+                <div class='exemplo'>fadeIn</div>
+              </div>
+              <div class='fadeOut'>
+                <div class='exemplo'>fadeOut</div>
+              </div>
+              <div class='batimentos'>
+                <div class='exemplo'>batimentos</div>
+              </div>
+            </div>
+         </section>`,
+        methods: {
+          close: function () {
+            var bloco = document.getElementById("anim-componentes");
+            bloco.style.display = "none";
+          },
+        },
+      });
+      // Vuejs raiz
+      var app = new Vue({
+        el: "#app",
+        data() {
+          return {};
+        },
+        methods: {
+          abrirMenu: function () {
+            var bg = document.getElementById("bg-menu");
+            var menu = document.getElementById("menu");
+            bg.style.display = "flex";
+            bg.onclick = function () {
+              bg.style.display = "none";
+            };
+          },
+          openAnim: function () {
+            var anims = document.getElementById("anim-componentes");
+            anims.style.display = "flex";
+          },
+          openForms: function () {
+            var forms = document.getElementById("forms");
+            forms.style.display = "flex";
+          },
+          openLayout: function () {
+            var layout = document.getElementById("layout");
+            layout.style.display = "flex";
+          },
+          openNotifications: function () {
+            var notifications = document.getElementById("notifications");
+            notifications.style.display = "flex";
+          },
+          openTexts: function () {
+            var texts = document.getElementById("texts");
+            texts.style.display = "flex";
+          },
+          openAlerts: function () {
+            var alerts = document.getElementById("alerts");
+            alerts.style.display = "flex";
+          },
+          openButtons: function () {
+            var buttons = document.getElementById("buttons");
+            buttons.style.display = "flex";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

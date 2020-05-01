@@ -1,0 +1,376 @@
+// Imports
+@import "softly.css";
+@import "responsive";
+// Variáveis
+$fonte-padrao: "arial";
+$fonte-grande: 4rem;
+$fonte-media: 3rem;
+$fonte-pequena: 2rem;
+$fonte-detalhes: 0.6rem;
+$cor-escuro1: #7874f2;
+$cor-escuro2: #8e98f5;
+$cor-claro1: #b1cbfa;
+$cor-claro2: #dfe2fe;
+$cor-contraste: #fff;
+// Mixins flexbox
+@mixin centralizado() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin centralizado-total() {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin distribuido() {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin distribuido-total() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin inicio() {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin final() {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+// Mixins animações css
+@mixin cursor-opacidade {
+  cursor: pointer;
+  opacity: 0.5;
+  @include transition();
+}
+@mixin transform() {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+}
+@mixin transition() {
+  transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  -ms-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+}
+// Encadeamentos
+
+body {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  background-color: $cor-claro2;
+
+  .nav {
+    @include distribuido();
+    position: sticky;
+    top: 0;
+    height: auto;
+    padding: 25px;
+    background-color: $cor-contraste;
+    box-shadow: 0px 5px 5px rgba(51, 15, 179, 0.1);
+    animation: sliderDown linear 0.8s 1;
+    position: relative;
+
+    & {
+      @keyframes sliderDown {
+        from {
+          top: -120px;
+          opacity: 0;
+        }
+        to {
+          top: 0px;
+          opacity: 1;
+        }
+      }
+    }
+
+    .logo {
+      height: 35px;
+
+      &:hover {
+        cursor: pointer;
+        @include transform();
+        @include transition();
+      }
+    }
+
+    .icone-menu {
+      align-self: center;
+      color: $cor-escuro1;
+      margin-right: 25px;
+
+      &:hover {
+        @include cursor-opacidade();
+      }
+    }
+  }
+
+  .nav-lateral {
+    @include inicio();
+    align-items: normal;
+    display: none;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(51, 15, 179, 0.2);
+    z-index: 3;
+    animation: bgNavigation linear 0.4s 1;
+
+    & {
+      @keyframes bgNavigation {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+
+    .lista {
+      background-color: $cor-contraste;
+      position: relative;
+      animation: navigation linear 0.4s 1;
+      overflow-y: auto;
+
+      & {
+        @keyframes navigation {
+          from {
+            left: -120px;
+          }
+          to {
+            left: 0px;
+          }
+        }
+      }
+
+      .item-titulo {
+        @include inicio();
+        flex-direction: column;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 35px;
+        padding-right: 35px;
+        color: $cor-escuro2;
+
+        p {
+          font-family: $fonte-padrao;
+          font-weight: bold;
+        }
+
+        hr {
+          width: 100%;
+          border: 1px dashed $cor-escuro2;
+        }
+      }
+
+      .item {
+        @include inicio();
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 35px;
+        padding-right: 35px;
+        color: $cor-escuro2;
+
+        &:hover {
+          @include cursor-opacidade();
+          background-color: $cor-escuro1;
+          color: $cor-contraste;
+        }
+
+        p {
+          font-family: $fonte-padrao;
+        }
+
+        i {
+          align-self: center;
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+
+  main {
+    @include centralizado();
+    flex-direction: column;
+    article {
+      @include centralizado();
+      align-self: center;
+      padding-top: 25px;
+      width: 95%;
+      position: relative;
+      animation: blocoAnim linear 0.4s 1;
+
+      & {
+        @keyframes blocoAnim {
+          from {
+            opacity: 0;
+            left: -120px;
+          }
+          to {
+            opacity: 1;
+            left: 0px;
+          }
+        }
+      }
+      section {
+        padding: 35px;
+        background-color: $cor-contraste;
+        height: auto;
+        width: 75%;
+        border-radius: 15px;
+        box-shadow: 5px 5px 5px rgba(51, 15, 179, 0.1);
+
+        .info {
+          @include distribuido-total();
+
+          p {
+            padding: 0;
+            margin: 0;
+            font-family: $fonte-padrao;
+            font-size: $fonte-pequena;
+            font-weight: bold;
+            color: $cor-escuro1;
+
+            &:hover {
+              @include cursor-opacidade();
+            }
+          }
+        }
+
+        h2 {
+          font-family: $fonte-padrao;
+          color: $cor-escuro1;
+          font-weight: normal;
+          margin: 0;
+          padding: 0;
+        }
+
+        .content {
+          @include inicio();
+          flex-direction: row;
+          flex-wrap: wrap;
+          height: auto;
+          margin-top: 12px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          width: 100%;
+        }
+
+        .content-coluna {
+          @include centralizado();
+          align-items: stretch;
+          flex-direction: column;
+          height: auto;
+          margin-top: 12px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          width: 100%;
+        }
+
+        hr {
+          border: 1px dashed $cor-escuro1;
+        }
+
+        h3 {
+          font-family: $fonte-padrao;
+          color: $cor-escuro1;
+          margin-bottom: 0px;
+        }
+
+        p {
+          font-family: $fonte-padrao;
+          color: $cor-escuro1;
+          margin-bottom: 25px;
+        }
+
+        code {
+          background-color: $cor-escuro1;
+          color: $cor-contraste;
+        }
+
+        .download-biblioteca {
+          @include inicio();
+          flex-direction: row;
+          a {
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            background-color: $cor-escuro1;
+            font-family: $fonte-padrao;
+            border-radius: 5px;
+            color: #fff;
+            border: none;
+            margin-right: 5px;
+            font-weight: bold;
+
+            &:hover {
+              @include cursor-opacidade();
+            }
+          }
+
+          p {
+            margin: 0;
+            padding: 0;
+            align-self: center;
+            color: $cor-escuro1;
+            font-family: $fonte-padrao;
+            font-size: $fonte-detalhes;
+          }
+        }
+      }
+    }
+
+    // Blocos ocultos
+    #notifications {
+      display: none;
+    }
+    #layout {
+      display: none;
+    }
+    #forms {
+      display: none;
+    }
+    #anim-componentes {
+      display: none;
+    }
+    #texts {
+      display: none;
+    }
+    #alerts {
+      display: none;
+    }
+    #buttons {
+      display: none;
+    }
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+    background-color: $cor-escuro1;
+    width: 100%;
+    @include centralizado();
+    height: auto;
+
+    p {
+      font-family: $fonte-padrao;
+      font-size: $fonte-detalhes;
+      color: $cor-contraste;
+    }
+  }
+}

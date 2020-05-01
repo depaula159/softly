@@ -1,0 +1,278 @@
+@import url(softly.css);
+@media only screen and (max-width: 600px) {
+  body main article section {
+    text-align: center; }
+
+  body main article section .download-framework {
+    justify-content: center !important;
+    flex-direction: column !important; }
+
+  body main article section .download-framework a {
+    margin-bottom: 5px;
+    margin-right: 0px !important;
+    align-self: stretch !important; }
+
+  body main article section .content {
+    justify-content: center !important; } }
+body {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  background-color: #dfe2fe; }
+  body .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: auto;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0px 5px 5px rgba(51, 15, 179, 0.1);
+    animation: sliderDown linear 0.8s 1;
+    position: relative; }
+@keyframes sliderDown {
+  from {
+    top: -120px;
+    opacity: 0; }
+  to {
+    top: 0px;
+    opacity: 1; } }
+    body .nav .logo {
+      height: 35px; }
+      body .nav .logo:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        transition: all 0.4s ease-in;
+        -webkit-transition: all 0.4s ease-in;
+        -ms-transition: all 0.4s ease-in;
+        -moz-transition: all 0.4s ease-in; }
+    body .nav .icone-menu {
+      align-self: center;
+      color: #7874f2;
+      margin-right: 25px; }
+      body .nav .icone-menu:hover {
+        cursor: pointer;
+        opacity: 0.5;
+        transition: all 0.4s ease-in;
+        -webkit-transition: all 0.4s ease-in;
+        -ms-transition: all 0.4s ease-in;
+        -moz-transition: all 0.4s ease-in; }
+  body .nav-lateral {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-items: normal;
+    display: none;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(51, 15, 179, 0.2);
+    z-index: 3;
+    animation: bgNavigation linear 0.4s 1; }
+@keyframes bgNavigation {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+    body .nav-lateral .lista {
+      background-color: #fff;
+      position: relative;
+      animation: navigation linear 0.4s 1;
+      overflow-y: auto; }
+@keyframes navigation {
+  from {
+    left: -120px; }
+  to {
+    left: 0px; } }
+      body .nav-lateral .lista .item-titulo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 35px;
+        padding-right: 35px;
+        color: #8e98f5; }
+        body .nav-lateral .lista .item-titulo p {
+          font-family: "arial";
+          font-weight: bold; }
+        body .nav-lateral .lista .item-titulo hr {
+          width: 100%;
+          border: 1px dashed #8e98f5; }
+      body .nav-lateral .lista .item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 35px;
+        padding-right: 35px;
+        color: #8e98f5; }
+        body .nav-lateral .lista .item:hover {
+          cursor: pointer;
+          opacity: 0.5;
+          transition: all 0.4s ease-in;
+          -webkit-transition: all 0.4s ease-in;
+          -ms-transition: all 0.4s ease-in;
+          -moz-transition: all 0.4s ease-in;
+          background-color: #7874f2;
+          color: #fff; }
+        body .nav-lateral .lista .item p {
+          font-family: "arial"; }
+        body .nav-lateral .lista .item i {
+          align-self: center;
+          margin-right: 25px; }
+  body main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    body main article {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      padding-top: 25px;
+      width: 95%;
+      position: relative;
+      animation: blocoAnim linear 0.4s 1; }
+@keyframes blocoAnim {
+  from {
+    opacity: 0;
+    left: -120px; }
+  to {
+    opacity: 1;
+    left: 0px; } }
+      body main article section {
+        padding: 35px;
+        background-color: #fff;
+        height: auto;
+        width: 75%;
+        border-radius: 15px;
+        box-shadow: 5px 5px 5px rgba(51, 15, 179, 0.1); }
+        body main article section .info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          body main article section .info p {
+            padding: 0;
+            margin: 0;
+            font-family: "arial";
+            font-size: 2rem;
+            font-weight: bold;
+            color: #7874f2; }
+            body main article section .info p:hover {
+              cursor: pointer;
+              opacity: 0.5;
+              transition: all 0.4s ease-in;
+              -webkit-transition: all 0.4s ease-in;
+              -ms-transition: all 0.4s ease-in;
+              -moz-transition: all 0.4s ease-in; }
+        body main article section h2 {
+          font-family: "arial";
+          color: #7874f2;
+          font-weight: normal;
+          margin: 0;
+          padding: 0; }
+        body main article section .content {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+          height: auto;
+          margin-top: 12px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          width: 100%; }
+        body main article section .content-coluna {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-items: stretch;
+          flex-direction: column;
+          height: auto;
+          margin-top: 12px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          width: 100%; }
+        body main article section hr {
+          border: 1px dashed #7874f2; }
+        body main article section h3 {
+          font-family: "arial";
+          color: #7874f2;
+          margin-bottom: 0px; }
+        body main article section p {
+          font-family: "arial";
+          color: #7874f2;
+          margin-bottom: 25px; }
+        body main article section code {
+          background-color: #7874f2;
+          color: #fff; }
+        body main article section .download-biblioteca {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: row; }
+          body main article section .download-biblioteca a {
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #7874f2;
+            font-family: "arial";
+            border-radius: 5px;
+            color: #fff;
+            border: none;
+            margin-right: 5px;
+            font-weight: bold; }
+            body main article section .download-biblioteca a:hover {
+              cursor: pointer;
+              opacity: 0.5;
+              transition: all 0.4s ease-in;
+              -webkit-transition: all 0.4s ease-in;
+              -ms-transition: all 0.4s ease-in;
+              -moz-transition: all 0.4s ease-in; }
+          body main article section .download-biblioteca p {
+            margin: 0;
+            padding: 0;
+            align-self: center;
+            color: #7874f2;
+            font-family: "arial";
+            font-size: 0.6rem; }
+    body main #notifications {
+      display: none; }
+    body main #layout {
+      display: none; }
+    body main #forms {
+      display: none; }
+    body main #anim-componentes {
+      display: none; }
+    body main #texts {
+      display: none; }
+    body main #alerts {
+      display: none; }
+    body main #buttons {
+      display: none; }
+  body footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+    background-color: #7874f2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; }
+    body footer p {
+      font-family: "arial";
+      font-size: 0.6rem;
+      color: #fff; }
+
+/*# sourceMappingURL=softly.model.css.map */

@@ -1,0 +1,17 @@
+@media only screen and (max-width: 600px) {
+  body main article section {
+    text-align: center;
+  }
+  body main article section .download-framework {
+    justify-content: center !important;
+    flex-direction: column !important;
+  }
+  body main article section .download-framework a {
+    margin-bottom: 5px;
+    margin-right: 0px !important;
+    align-self: stretch !important;
+  }
+  body main article section .content {
+    justify-content: center !important;
+  }
+}
